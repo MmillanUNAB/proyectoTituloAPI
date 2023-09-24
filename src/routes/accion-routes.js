@@ -5,6 +5,7 @@ const AccionController = require('../app/controllers/AccionController');
 
 
 router.post('/registrar', AccionController.resitrarAccion);
+router.get('/descargar', AccionController.descargarReporte);
 
 
 module.exports = router;

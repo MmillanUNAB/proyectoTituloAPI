@@ -4,7 +4,7 @@ const sitiosModel = require('../models/SitiosModel');
 
 const login = async(req, res) => {
     const requiredParams = {
-        user: req.body.user || null,
+        user: req.body.usuario || null,
         password: req.body.password || null,
     };
     console.log(requiredParams)
@@ -34,10 +34,15 @@ const login = async(req, res) => {
         sitio['gps']= gps;
     }
 
+    delete usuario[0].password;
+
     return res.status(200).json({
         ok: true,
         message: 'Login OK',   
-        data: sitios
+        data: {
+            usuario:usuario[0],
+            sitios
+        }
     });
 }
 

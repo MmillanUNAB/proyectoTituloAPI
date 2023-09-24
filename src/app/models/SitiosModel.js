@@ -6,7 +6,8 @@ const obtenerSitios = async () => {
             SELECT 
                 idsitios,
                 nombre,
-                codigo
+                codigo,
+                tipogg
             FROM sitios
         `;
 
